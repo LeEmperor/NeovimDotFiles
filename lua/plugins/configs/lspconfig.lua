@@ -55,10 +55,18 @@ lspconfig.lua_ls.setup {
 }
 
 -- setup multiple servers with same default options
---local servers = { "tsserver", "html", "cssls" }
---
---for _, lsp in ipairs(servers) do
---  lspconfig[lsp].setup {
---    capabilities = capabilities,
---  }
---end
+local servers = { "clangd", "vhdl_ls" }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities,
+  }
+end
+
+function STARTVHDLLS()
+    vim.lsp.start({
+        name = 'vhdl_ls',
+        cmd = {'vhdl_ls'},
+    })
+end
+vim.api.nvim_set_keymap('n', '<F5>', ':lua STARTVHDLLS()<CR>', {noremap = true, silent = true})
