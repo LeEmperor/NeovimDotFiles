@@ -22,5 +22,8 @@ local plugins = require "plugins"
 
 require("lazy").setup(plugins, require "lazy_config")
 
-vim.cmd "colorscheme vim"
+vim.cmd "colorscheme carbonfox"
+-- vim.api.nvim_set_keymap('n', 'q', '<nop>', opts)
+-- vim.api.nvim_set_keymap('n', 'Q', '<nop>', opts)
+--vim.cmd "tnoremap <Esc> <C-\><C-n>"
 

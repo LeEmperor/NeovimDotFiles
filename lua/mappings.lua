@@ -7,6 +7,9 @@ map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent
 map("n", "bv", "<C-v>")
 map("v", "bv", "<C-v>")
 map("i", "bv", "<C-v>")
+map("t", "jk", "<C-\\><C-n>")
+map("n", "q", "<nop>")
+map("n", "Q", "<nop>")
 
 -- nvimtree
 map("n", "<C-n>", "<cmd> NvimTreeToggle <CR>")

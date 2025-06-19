@@ -54,6 +54,29 @@ lspconfig.lua_ls.setup {
   },
 }
 
+lspconfig.rust_analyzer.setup({
+    on_attach = function(client, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end
+})
+
+-- lspconfig.rust_analyzer.setup({
+--     settings = {
+--         ["rust-analyzer"] = {
+--             assist = {
+--                 importGranularity = "module",
+--                 importPrefix = "by_self",
+--             },
+--             cargo = {
+--                 loadOutDirsFromCheck = true
+--             },
+--             procMacro = {
+--                 enable = true
+--             },
+--         }
+--     }
+-- })
+
 -- setup multiple servers with same default options
 local servers = { "clangd", "vhdl_ls" }
 
@@ -70,3 +93,5 @@ function STARTVHDLLS()
     })
 end
 vim.api.nvim_set_keymap('n', '<F5>', ':lua STARTVHDLLS()<CR>', {noremap = true, silent = true})
+
+
