@@ -10,6 +10,8 @@ map("i", "bv", "<C-v>")
 map("t", "jk", "<C-\\><C-n>")
 map("n", "q", "<nop>")
 map("n", "Q", "<nop>")
+map("n", "j", "gj") -- visual line moves are the same
+map("n", "k", "gk")
 
 -- nvimtree
 map("n", "<C-n>", "<cmd> NvimTreeToggle <CR>")
@@ -34,3 +36,4 @@ map("v", "<leader>/", "gc", { remap = true })
 map("n", "<leader>fm", function()
   require("conform").format()
 end)
+
