@@ -32,6 +32,12 @@ map("n", "<C-q>", "<cmd> bd <CR>")
 map("n", "<leader>/", "gcc", { remap = true })
 map("v", "<leader>/", "gc", { remap = true })
 
+-- vim.api.nvim_set_keymap('n', 'q', '<nop>', opts)
+-- vim.api.nvim_set_keymap('n', 'Q', '<nop>', opts)
+--vim.cmd "tnoremap <Esc> <C-\><C-n>"
+map("n", "q", "<nop>")
+map("n", "Q", "<nop>")
+
 -- format
 map("n", "<leader>fm", function()
   require("conform").format()
